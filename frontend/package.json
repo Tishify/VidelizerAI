@@ -2,7 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://mykytatishkin.github.io/VidelizerAI",
+  "homepage": "https://tishify.github.io/VidelizerAI",
   "dependencies": {
     "@tailwindcss/postcss": "^4.1.11",
     "@testing-library/dom": "^10.4.0",
