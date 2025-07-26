@@ -39,10 +39,7 @@ async def transcribe(file: UploadFile = File(...), request: Request = None, lang
         logger.debug(f"[{request_id}] 🧹 Temp file deleted")
 
         response = {
-            "language": result["language"],
-            "duration": result.get("duration"),
-            "text": result["text"],
-            "segments": result["segments"]
+            "text": result["text"]
         }
 
         logger.success(f"[{request_id}] ✅ Transcription done. {len(result['text'])} characters")

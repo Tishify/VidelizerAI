@@ -1,3 +1,10 @@
 Transcription/app/logs/whisper.log
 Transcription/app/__pycache__/*
 Transcription/app/logs/whisper.log
+backend/Transcription/app/__pycache__/main.cpython-310.pyc
+backend/Transcription/app/logs/whisper.log
+backend/Anal/logs/backend.log
+backend/Anal/__pycache__/main.cpython-310.pyc
+backend/Anal/__pycache__/gpt_structurer.cpython-310.pyc
+backend/Anal/poetry.lock
+backend/Anal/__pycache__/main.cpython-310.pyc

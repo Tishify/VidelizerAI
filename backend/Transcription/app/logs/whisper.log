@@ -50,3 +50,10 @@
 2025-07-26 20:38:00.338 | INFO     | main:process_file:47 - [cae026f9] 🌐 Автоопределение языка
 2025-07-26 20:39:15.259 | SUCCESS  | main:process_file:60 - [cae026f9] ✅ Готово. 683 символов
 2025-07-26 20:39:15.264 | DEBUG    | main:process_file:68 - [cae026f9] 🧹 Временный файл удалён
+2025-07-26 20:42:51.958 | INFO     | main:<module>:14 - Whisper API initialized
+2025-07-26 20:43:11.869 | INFO     | main:transcribe:19 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 📥 Received file: test60.mp4 from 127.0.0.1
+2025-07-26 20:43:11.878 | DEBUG    | main:transcribe:26 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 💾 Saved file to temp path: C:\Users\hlibs\AppData\Local\Temp\tmpofl3ts0w.mp4
+2025-07-26 20:43:11.878 | INFO     | main:transcribe:28 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 🧠 Starting transcription
+2025-07-26 20:43:11.878 | INFO     | main:transcribe:34 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 🌐 Autodetect language
+2025-07-26 20:44:20.569 | DEBUG    | main:transcribe:39 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 🧹 Temp file deleted
+2025-07-26 20:44:20.571 | SUCCESS  | main:transcribe:48 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] ✅ Transcription done. 683 characters

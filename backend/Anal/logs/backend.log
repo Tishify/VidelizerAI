@@ -33,3 +33,16 @@
 2025-07-26 20:37:57.989 | INFO     | main:upload_and_transcribe:48 - [9eade586-fc0c-4148-a7dd-cb25b1556d89] 🚀 Sending to Whisper: http://localhost:8000/transcribe?lang=auto
 2025-07-26 20:38:00.339 | DEBUG    | main:upload_and_transcribe:56 - [9eade586-fc0c-4148-a7dd-cb25b1556d89] 🧹 Temp file removed
 2025-07-26 20:38:00.340 | INFO     | main:upload_and_transcribe:58 - [9eade586-fc0c-4148-a7dd-cb25b1556d89] ✅ Whisper returned 202
+2025-07-26 20:40:50.839 | INFO     | main:<module>:15 - Backend API initialized
+2025-07-26 20:43:09.462 | INFO     | main:upload_and_transcribe:39 - [1a26fb14-c555-4cd6-81d7-15af3c687cdf] 📥 Upload request from 127.0.0.1 with file: test60.mp4
+2025-07-26 20:43:09.473 | DEBUG    | main:upload_and_transcribe:46 - [1a26fb14-c555-4cd6-81d7-15af3c687cdf] Saved file to: C:\Users\hlibs\AppData\Local\Temp\tmp68eo3vcz.mp4
+2025-07-26 20:43:09.473 | INFO     | main:upload_and_transcribe:48 - [1a26fb14-c555-4cd6-81d7-15af3c687cdf] 🚀 Sending to Whisper: http://localhost:8000/transcribe?lang=auto
+2025-07-26 20:44:20.582 | DEBUG    | main:upload_and_transcribe:56 - [1a26fb14-c555-4cd6-81d7-15af3c687cdf] 🧹 Temp file removed
+2025-07-26 20:44:20.582 | INFO     | main:upload_and_transcribe:58 - [1a26fb14-c555-4cd6-81d7-15af3c687cdf] ✅ Whisper returned 200
+2025-07-26 20:47:06.173 | INFO     | main:<module>:15 - Backend API initialized
+2025-07-26 20:47:53.575 | INFO     | main:upload_and_transcribe:39 - [cca683de-8665-4db1-971b-7c8e007372cb] 📥 Upload request from 127.0.0.1 with file: test60.mp4
+2025-07-26 20:47:53.590 | DEBUG    | main:upload_and_transcribe:46 - [cca683de-8665-4db1-971b-7c8e007372cb] Saved file to: C:\Users\hlibs\AppData\Local\Temp\tmpbd9wac48.mp4
+2025-07-26 20:47:53.590 | INFO     | main:upload_and_transcribe:48 - [cca683de-8665-4db1-971b-7c8e007372cb] 🚀 Sending to Whisper: http://localhost:8000/transcribe?lang=auto
+2025-07-26 20:49:01.189 | DEBUG    | main:upload_and_transcribe:56 - [cca683de-8665-4db1-971b-7c8e007372cb] 🧹 Temp file removed
+2025-07-26 20:49:01.190 | INFO     | main:upload_and_transcribe:58 - [cca683de-8665-4db1-971b-7c8e007372cb] ✅ Whisper returned 200
+2025-07-26 20:52:32.064 | INFO     | main:<module>:15 - Backend API initialized
