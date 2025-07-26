@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/VidelizerAI/static/css/main.c706682d.css",
+    "main.js": "/VidelizerAI/static/js/main.d13c67fc.js",
+    "static/js/453.670e15c7.chunk.js": "/VidelizerAI/static/js/453.670e15c7.chunk.js",
+    "index.html": "/VidelizerAI/index.html",
+    "main.c706682d.css.map": "/VidelizerAI/static/css/main.c706682d.css.map",
+    "main.d13c67fc.js.map": "/VidelizerAI/static/js/main.d13c67fc.js.map",
+    "453.670e15c7.chunk.js.map": "/VidelizerAI/static/js/453.670e15c7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c706682d.css",
+    "static/js/main.d13c67fc.js"
+  ]
+}
