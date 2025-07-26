@@ -1,0 +1,35 @@
+2025-07-26 20:25:00.699 | INFO     | main:<module>:14 - Backend API initialized
+2025-07-26 20:25:08.153 | INFO     | main:<module>:14 - Backend API initialized
+2025-07-26 20:26:30.453 | INFO     | main:<module>:15 - Backend API initialized
+2025-07-26 20:26:37.764 | INFO     | main:root:35 - GET / → redirect to /static/index.html
+2025-07-26 20:26:51.235 | INFO     | main:upload_and_forward:42 - [8e5fb412-5378-426d-ad0c-df62d8cda6b8] Incoming upload request from 127.0.0.1 with file: test60.mp4
+2025-07-26 20:26:51.247 | DEBUG    | main:upload_and_forward:50 - [8e5fb412-5378-426d-ad0c-df62d8cda6b8] File saved to temporary path: C:\Users\hlibs\AppData\Local\Temp\tmpbmmdsz18.mp4
+2025-07-26 20:26:51.247 | INFO     | main:upload_and_forward:53 - [8e5fb412-5378-426d-ad0c-df62d8cda6b8] Forwarding file to Whisper API: http://localhost:8000/transcribe?lang=auto
+2025-07-26 20:26:53.676 | DEBUG    | main:upload_and_forward:61 - [8e5fb412-5378-426d-ad0c-df62d8cda6b8] Temp file removed: C:\Users\hlibs\AppData\Local\Temp\tmpbmmdsz18.mp4
+2025-07-26 20:26:53.677 | ERROR    | main:upload_and_forward:64 - [8e5fb412-5378-426d-ad0c-df62d8cda6b8] Whisper API error 202: {"status":"processing","message":"Transcription started","request_id":"aa5b4cf8"}
+2025-07-26 20:30:28.000 | INFO     | main:<module>:15 - Backend API initialized
+2025-07-26 20:30:36.851 | INFO     | main:upload_and_forward:42 - [9a56a886-7a71-441e-b8ac-d50c22dbed03] Incoming upload request from 127.0.0.1 with file: test60.mp4
+2025-07-26 20:30:36.862 | DEBUG    | main:upload_and_forward:50 - [9a56a886-7a71-441e-b8ac-d50c22dbed03] File saved to temporary path: C:\Users\hlibs\AppData\Local\Temp\tmp9kqiqbgv.mp4
+2025-07-26 20:30:36.862 | INFO     | main:upload_and_forward:53 - [9a56a886-7a71-441e-b8ac-d50c22dbed03] Forwarding file to Whisper API: http://localhost:8000/transcribe?lang=auto
+2025-07-26 20:30:39.221 | DEBUG    | main:upload_and_forward:61 - [9a56a886-7a71-441e-b8ac-d50c22dbed03] Temp file removed: C:\Users\hlibs\AppData\Local\Temp\tmp9kqiqbgv.mp4
+2025-07-26 20:30:39.222 | INFO     | main:upload_and_forward:66 - [9a56a886-7a71-441e-b8ac-d50c22dbed03] Whisper API response received: 202
+2025-07-26 20:32:46.842 | INFO     | main:<module>:15 - Backend API initialized
+2025-07-26 20:32:51.764 | INFO     | main:upload_and_forward:42 - [60ec10c6-d248-45c4-a1cf-a58cec22bc57] Incoming upload request from 127.0.0.1 with file: test60.mp4
+2025-07-26 20:35:34.152 | DEBUG    | main:upload_and_forward:50 - [60ec10c6-d248-45c4-a1cf-a58cec22bc57] File saved to temporary path: C:\Users\hlibs\AppData\Local\Temp\tmpe3al9px2.mp4
+2025-07-26 20:35:34.153 | INFO     | main:upload_and_forward:53 - [60ec10c6-d248-45c4-a1cf-a58cec22bc57] Forwarding file to Whisper API: http://localhost:8000/transcribe?lang=auto
+2025-07-26 20:35:36.501 | DEBUG    | main:upload_and_forward:61 - [60ec10c6-d248-45c4-a1cf-a58cec22bc57] Temp file removed: C:\Users\hlibs\AppData\Local\Temp\tmpe3al9px2.mp4
+2025-07-26 20:35:36.501 | INFO     | main:upload_and_forward:66 - [60ec10c6-d248-45c4-a1cf-a58cec22bc57] Whisper API response received: 202
+2025-07-26 20:35:38.509 | INFO     | main:<module>:15 - Backend API initialized
+2025-07-26 20:35:45.607 | INFO     | main:<module>:15 - Backend API initialized
+2025-07-26 20:35:47.773 | INFO     | main:root:33 - GET / → redirect to /static/index.html
+2025-07-26 20:35:54.192 | INFO     | main:upload_and_transcribe:39 - [d0f23803-d645-421a-b324-4b7189206a39] 📥 Upload request from 127.0.0.1 with file: test60.mp4
+2025-07-26 20:35:54.216 | DEBUG    | main:upload_and_transcribe:46 - [d0f23803-d645-421a-b324-4b7189206a39] Saved file to: C:\Users\hlibs\AppData\Local\Temp\tmp3umqtrf6.mp4
+2025-07-26 20:35:54.217 | INFO     | main:upload_and_transcribe:48 - [d0f23803-d645-421a-b324-4b7189206a39] 🚀 Sending to Whisper: http://localhost:8000/transcribe?lang=auto
+2025-07-26 20:35:56.908 | DEBUG    | main:upload_and_transcribe:56 - [d0f23803-d645-421a-b324-4b7189206a39] 🧹 Temp file removed
+2025-07-26 20:35:56.908 | INFO     | main:upload_and_transcribe:58 - [d0f23803-d645-421a-b324-4b7189206a39] ✅ Whisper returned 429
+2025-07-26 20:37:33.296 | INFO     | main:<module>:15 - Backend API initialized
+2025-07-26 20:37:57.961 | INFO     | main:upload_and_transcribe:39 - [9eade586-fc0c-4148-a7dd-cb25b1556d89] 📥 Upload request from 127.0.0.1 with file: test60.mp4
+2025-07-26 20:37:57.989 | DEBUG    | main:upload_and_transcribe:46 - [9eade586-fc0c-4148-a7dd-cb25b1556d89] Saved file to: C:\Users\hlibs\AppData\Local\Temp\tmp4qqqjip0.mp4
+2025-07-26 20:37:57.989 | INFO     | main:upload_and_transcribe:48 - [9eade586-fc0c-4148-a7dd-cb25b1556d89] 🚀 Sending to Whisper: http://localhost:8000/transcribe?lang=auto
+2025-07-26 20:38:00.339 | DEBUG    | main:upload_and_transcribe:56 - [9eade586-fc0c-4148-a7dd-cb25b1556d89] 🧹 Temp file removed
+2025-07-26 20:38:00.340 | INFO     | main:upload_and_transcribe:58 - [9eade586-fc0c-4148-a7dd-cb25b1556d89] ✅ Whisper returned 202
