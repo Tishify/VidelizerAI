@@ -34,7 +34,7 @@ Visit the live application: [VidelizerAI on GitHub Pages](https://tishify.github
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/mykytatishkin/VidelizerAI.git
+git clone https://github.com/Tishify/VidelizerAI.git
 cd VidelizerAI
 ```
 
@@ -75,7 +75,7 @@ npm run deploy
 This will:
 1. Build the production version
 2. Deploy to the `gh-pages` branch
-3. Make the app available at `https://mykytatishkin.github.io/VidelizerAI`
+3. Make the app available at `https://tishify.github.io/VidelizerAI`
 
 ## Project Structure
 
