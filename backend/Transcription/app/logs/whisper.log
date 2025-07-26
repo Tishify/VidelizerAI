@@ -22,3 +22,38 @@
 2025-07-26 16:53:59.184 | INFO     | main:<module>:20 - 🚀 Приложение запущено
 2025-07-26 16:53:59.184 | INFO     | main:<module>:23 - 📦 Загрузка модели Whisper (medium)...
 2025-07-26 16:54:08.694 | INFO     | main:<module>:25 - ✅ Модель загружена
+2025-07-26 20:16:05.807 | INFO     | main:<module>:20 - 🚀 Приложение запущено
+2025-07-26 20:16:05.808 | INFO     | main:<module>:23 - 📦 Загрузка модели Whisper (medium)...
+2025-07-26 20:16:16.777 | INFO     | main:<module>:25 - ✅ Модель загружена
+2025-07-26 20:26:53.671 | INFO     | main:transcribe:102 - [aa5b4cf8] 📥 Получен файл: test60.mp4
+2025-07-26 20:26:53.671 | INFO     | main:transcribe:103 - [aa5b4cf8] 💾 Сохранён как: uploads\aa5b4cf8.mp4
+2025-07-26 20:26:53.674 | INFO     | main:process_file:37 - [aa5b4cf8] 🧠 Начало транскрипции
+2025-07-26 20:26:53.675 | INFO     | main:process_file:47 - [aa5b4cf8] 🌐 Автоопределение языка
+2025-07-26 20:27:56.986 | SUCCESS  | main:process_file:60 - [aa5b4cf8] ✅ Готово. 683 символов
+2025-07-26 20:27:56.990 | DEBUG    | main:process_file:68 - [aa5b4cf8] 🧹 Временный файл удалён
+2025-07-26 20:30:39.215 | INFO     | main:transcribe:102 - [3e522373] 📥 Получен файл: test60.mp4
+2025-07-26 20:30:39.216 | INFO     | main:transcribe:103 - [3e522373] 💾 Сохранён как: uploads\3e522373.mp4
+2025-07-26 20:30:39.219 | INFO     | main:process_file:37 - [3e522373] 🧠 Начало транскрипции
+2025-07-26 20:30:39.219 | INFO     | main:process_file:47 - [3e522373] 🌐 Автоопределение языка
+2025-07-26 20:31:47.114 | SUCCESS  | main:process_file:60 - [3e522373] ✅ Готово. 683 символов
+2025-07-26 20:31:47.118 | DEBUG    | main:process_file:68 - [3e522373] 🧹 Временный файл удалён
+2025-07-26 20:35:36.494 | INFO     | main:transcribe:102 - [f83606cb] 📥 Получен файл: test60.mp4
+2025-07-26 20:35:36.495 | INFO     | main:transcribe:103 - [f83606cb] 💾 Сохранён как: uploads\f83606cb.mp4
+2025-07-26 20:35:36.497 | INFO     | main:process_file:37 - [f83606cb] 🧠 Начало транскрипции
+2025-07-26 20:35:36.499 | INFO     | main:process_file:47 - [f83606cb] 🌐 Автоопределение языка
+2025-07-26 20:35:56.898 | WARNING  | main:transcribe:88 - [6cc48297] 🚫 Отказ — уже идёт обработка
+2025-07-26 20:36:50.484 | SUCCESS  | main:process_file:60 - [f83606cb] ✅ Готово. 683 символов
+2025-07-26 20:36:50.487 | DEBUG    | main:process_file:68 - [f83606cb] 🧹 Временный файл удалён
+2025-07-26 20:38:00.334 | INFO     | main:transcribe:102 - [cae026f9] 📥 Получен файл: test60.mp4
+2025-07-26 20:38:00.335 | INFO     | main:transcribe:103 - [cae026f9] 💾 Сохранён как: uploads\cae026f9.mp4
+2025-07-26 20:38:00.338 | INFO     | main:process_file:37 - [cae026f9] 🧠 Начало транскрипции
+2025-07-26 20:38:00.338 | INFO     | main:process_file:47 - [cae026f9] 🌐 Автоопределение языка
+2025-07-26 20:39:15.259 | SUCCESS  | main:process_file:60 - [cae026f9] ✅ Готово. 683 символов
+2025-07-26 20:39:15.264 | DEBUG    | main:process_file:68 - [cae026f9] 🧹 Временный файл удалён
+2025-07-26 20:42:51.958 | INFO     | main:<module>:14 - Whisper API initialized
+2025-07-26 20:43:11.869 | INFO     | main:transcribe:19 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 📥 Received file: test60.mp4 from 127.0.0.1
+2025-07-26 20:43:11.878 | DEBUG    | main:transcribe:26 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 💾 Saved file to temp path: C:\Users\hlibs\AppData\Local\Temp\tmpofl3ts0w.mp4
+2025-07-26 20:43:11.878 | INFO     | main:transcribe:28 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 🧠 Starting transcription
+2025-07-26 20:43:11.878 | INFO     | main:transcribe:34 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 🌐 Autodetect language
+2025-07-26 20:44:20.569 | DEBUG    | main:transcribe:39 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 🧹 Temp file deleted
+2025-07-26 20:44:20.571 | SUCCESS  | main:transcribe:48 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] ✅ Transcription done. 683 characters
