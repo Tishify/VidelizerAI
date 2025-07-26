@@ -10,7 +10,7 @@ def transcribe_audio(file_path: str, result_path: str):
     result = model.transcribe(file_path, language="Ukrainian", fp16=False)
     with open(result_path, "w", encoding="utf-8") as f:
         f.write(result["text"])
-    print(f"✅ Transcription saved to: {result_path}")
+    print(f"Transcription saved to: {result_path}")
 
 @app.post("/transcribe")
 async def transcribe_endpoint(file: UploadFile = File(...), background_tasks: BackgroundTasks = BackgroundTasks()):
