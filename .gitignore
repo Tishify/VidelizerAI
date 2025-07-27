@@ -8,3 +8,8 @@ backend/Anal/__pycache__/main.cpython-310.pyc
 backend/Anal/__pycache__/gpt_structurer.cpython-310.pyc
 backend/Anal/poetry.lock
 backend/Anal/__pycache__/main.cpython-310.pyc
+backend/Anal/.env
+backend/Anal/__pycache__/*
+backend/Transcription/app/logs/whisper.log
+backend/Anal/.env
+backend/Anal/.env

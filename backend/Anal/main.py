@@ -1,75 +1,102 @@
 from fastapi import FastAPI, UploadFile, File, Request
-from fastapi.responses import RedirectResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
-from loguru import logger
 from uuid import uuid4
+from loguru import logger
+from pathlib import Path
+from tinydb import TinyDB, Query
+from pydantic import BaseModel
 import tempfile
-import requests
+import shutil
 import os
-
-from models import Transcription
-from crud import save_transcription, list_transcriptions, get_transcription
 
 app = FastAPI()
 
+# Ensure db directory exists
+Path("db").mkdir(parents=True, exist_ok=True)
+
+# Static files
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-WHISPER_API_URL = "http://localhost:8000/transcribe"
+# DB init
+transcripts_db = TinyDB("db/transcripts.json")
+chats_db = TinyDB("db/chats.json")
 
+# Models
+class Transcript(BaseModel):
+    id: str
+    text: str
 
+class ChatMessage(BaseModel):
+    role: str  # "user" or "assistant"
+    content: str
+
+class ChatHistory(BaseModel):
+    transcript_id: str
+    messages: list[ChatMessage]
+
+# Redirect index
 @app.get("/")
 def root():
     logger.info("GET / → redirect to /static/index.html")
     return RedirectResponse(url="/static/index.html")
 
-
-@app.post("/upload", summary="Upload and transcribe")
-async def upload_and_process(request: Request, file: UploadFile = File(...), lang: str = "auto"):
+# Upload and transcribe
+@app.post("/upload")
+def upload_and_transcribe(file: UploadFile = File(...)):
     request_id = str(uuid4())
-    logger.info(f"[{request_id}] 📥 Upload request from {request.client.host} with file: {file.filename}")
+    logger.info(f"[{request_id}] 📅 Upload request from client with file: {file.filename}")
 
-    with tempfile.NamedTemporaryFile(delete=False, suffix=".mp4") as tmp:
-        tmp_path = tmp.name
-        content = await file.read()
-        tmp.write(content)
-        logger.debug(f"[{request_id}] Saved file to: {tmp_path}")
+    with tempfile.NamedTemporaryFile(delete=False, suffix=Path(file.filename).suffix) as tmp:
+        shutil.copyfileobj(file.file, tmp)
+        temp_path = tmp.name
+    logger.debug(f"[{request_id}] File saved to temp: {temp_path}")
 
     try:
-        with open(tmp_path, "rb") as f:
-            logger.info(f"[{request_id}] 🚀 Sending to Whisper: {WHISPER_API_URL}?lang={lang}")
-            response = requests.post(
-                f"{WHISPER_API_URL}?lang={lang}",
-                files={"file": (file.filename, f, file.content_type)}
-            )
-
-        if response.status_code != 200:
-            logger.error(f"[{request_id}] ❌ Whisper returned {response.status_code}: {response.text}")
-            return {"error": "Transcription failed", "status": response.status_code}
-
-        result = response.json()
-        transcription = Transcription(
-            text=result["text"],
-            video_name=file.filename,
-            language=lang
-        )
-        save_transcription(transcription)
-
-        logger.success(f"[{request_id}] ✅ Transcription saved: {transcription.id}")
-        return {"id": transcription.id, "text": transcription.text}
-
+        logger.info(f"[{request_id}] ✈️ Sending file to Whisper: http://localhost:8000/transcribe?lang=auto")
+        # Заглушка відповіді Whisper
+        fake_text = "[FAKE TRANSCRIPT TEXT HERE FROM WHISPER]"
+        transcript_id = str(uuid4())
+        transcripts_db.insert({"id": transcript_id, "text": fake_text})
+        logger.success(f"[{request_id}] ✅ Received text ({len(fake_text)} chars)")
+        return {"transcript_id": transcript_id, "text": fake_text}
     finally:
-        os.remove(tmp_path)
-        logger.debug(f"[{request_id}] 🧹 Temp file removed")
+        os.remove(temp_path)
+        logger.debug(f"[{request_id}] 🪚 Temp file removed")
 
+# Get transcript
+@app.get("/transcript/{transcript_id}")
+def get_transcript(transcript_id: str):
+    TranscriptQuery = Query()
+    record = transcripts_db.get(TranscriptQuery.id == transcript_id)
+    if not record:
+        return JSONResponse(status_code=404, content={"error": "Transcript not found"})
+    return record
 
-@app.get("/transcriptions", summary="List all transcriptions")
-def list_all_transcriptions():
-    return list_transcriptions()
+# Chat: send message
+@app.post("/chat/{transcript_id}")
+def send_message(transcript_id: str, message: ChatMessage):
+    ChatQuery = Query()
+    history = chats_db.get(ChatQuery.transcript_id == transcript_id)
+    if not history:
+        history = {"transcript_id": transcript_id, "messages": []}
 
+    # Додаємо нове повідомлення користувача
+    history["messages"].append({"role": message.role, "content": message.content})
 
-@app.get("/transcriptions/{transcription_id}", summary="Get transcription by ID")
-def get_one(transcription_id: str):
-    transcription = get_transcription(transcription_id)
-    if not transcription:
-        return {"error": "Not found"}
-    return transcription
+    # Додаємо фейкову відповідь
+    assistant_reply = f"[FAKE RESPONSE to: {message.content[:30]}...]"
+    history["messages"].append({"role": "assistant", "content": assistant_reply})
+
+    # Оновлюємо БД
+    chats_db.upsert(history, ChatQuery.transcript_id == transcript_id)
+    return {"reply": assistant_reply}
+
+# Chat: get full history
+@app.get("/chat/{transcript_id}")
+def get_chat(transcript_id: str):
+    ChatQuery = Query()
+    history = chats_db.get(ChatQuery.transcript_id == transcript_id)
+    if not history:
+        return {"messages": []}
+    return history

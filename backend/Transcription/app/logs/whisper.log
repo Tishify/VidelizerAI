@@ -57,3 +57,42 @@
 2025-07-26 20:43:11.878 | INFO     | main:transcribe:34 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 🌐 Autodetect language
 2025-07-26 20:44:20.569 | DEBUG    | main:transcribe:39 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] 🧹 Temp file deleted
 2025-07-26 20:44:20.571 | SUCCESS  | main:transcribe:48 - [2c0d14b6-4c84-41a2-9fd7-59bab805b669] ✅ Transcription done. 683 characters
+2025-07-26 20:47:53.433 | INFO     | main:<module>:14 - Whisper API initialized
+2025-07-26 20:47:56.116 | INFO     | main:transcribe:19 - [894346a2-c31c-44d0-aab6-b28eb56c6478] 📥 Received file: test60.mp4 from 127.0.0.1
+2025-07-26 20:47:56.128 | DEBUG    | main:transcribe:26 - [894346a2-c31c-44d0-aab6-b28eb56c6478] 💾 Saved file to temp path: C:\Users\hlibs\AppData\Local\Temp\tmp76k4mqbh.mp4
+2025-07-26 20:47:56.129 | INFO     | main:transcribe:28 - [894346a2-c31c-44d0-aab6-b28eb56c6478] 🧠 Starting transcription
+2025-07-26 20:47:56.129 | INFO     | main:transcribe:34 - [894346a2-c31c-44d0-aab6-b28eb56c6478] 🌐 Autodetect language
+2025-07-26 20:49:01.178 | DEBUG    | main:transcribe:39 - [894346a2-c31c-44d0-aab6-b28eb56c6478] 🧹 Temp file deleted
+2025-07-26 20:49:01.178 | SUCCESS  | main:transcribe:45 - [894346a2-c31c-44d0-aab6-b28eb56c6478] ✅ Transcription done. 683 characters
+2025-07-27 16:38:34.344 | INFO     | main:<module>:14 - Whisper API initialized
+2025-07-27 16:39:03.472 | INFO     | main:<module>:14 - Whisper API initialized
+2025-07-27 16:39:26.942 | INFO     | main:transcribe:19 - [de2af07b-56b2-488c-8775-6992d0c3a6ea] 📥 Received file: tmpk1tscng_.mp4 from 127.0.0.1
+2025-07-27 16:39:26.952 | DEBUG    | main:transcribe:26 - [de2af07b-56b2-488c-8775-6992d0c3a6ea] 💾 Saved file to temp path: C:\Users\hlibs\AppData\Local\Temp\tmp76psymjn.mp4
+2025-07-27 16:39:26.952 | INFO     | main:transcribe:28 - [de2af07b-56b2-488c-8775-6992d0c3a6ea] 🧠 Starting transcription
+2025-07-27 16:39:26.952 | INFO     | main:transcribe:34 - [de2af07b-56b2-488c-8775-6992d0c3a6ea] 🌐 Autodetect language
+2025-07-27 16:40:38.495 | DEBUG    | main:transcribe:39 - [de2af07b-56b2-488c-8775-6992d0c3a6ea] 🧹 Temp file deleted
+2025-07-27 16:40:38.496 | SUCCESS  | main:transcribe:45 - [de2af07b-56b2-488c-8775-6992d0c3a6ea] ✅ Transcription done. 683 characters
+2025-07-27 16:44:56.603 | INFO     | main:transcribe:19 - [50604154-7801-48b9-af89-c5665660958f] 📥 Received file: tmpakqmnehg.mp4 from 127.0.0.1
+2025-07-27 16:44:56.617 | DEBUG    | main:transcribe:26 - [50604154-7801-48b9-af89-c5665660958f] 💾 Saved file to temp path: C:\Users\hlibs\AppData\Local\Temp\tmpfnwvlwov.mp4
+2025-07-27 16:44:56.618 | INFO     | main:transcribe:28 - [50604154-7801-48b9-af89-c5665660958f] 🧠 Starting transcription
+2025-07-27 16:44:56.618 | INFO     | main:transcribe:34 - [50604154-7801-48b9-af89-c5665660958f] 🌐 Autodetect language
+2025-07-27 16:46:05.452 | DEBUG    | main:transcribe:39 - [50604154-7801-48b9-af89-c5665660958f] 🧹 Temp file deleted
+2025-07-27 16:46:05.452 | SUCCESS  | main:transcribe:45 - [50604154-7801-48b9-af89-c5665660958f] ✅ Transcription done. 683 characters
+2025-07-27 16:55:37.271 | INFO     | main:transcribe:19 - [c89a26cd-4e4d-4923-84d3-a681cb44168f] 📥 Received file: tmpcr5d255n.mp4 from 127.0.0.1
+2025-07-27 16:55:37.281 | DEBUG    | main:transcribe:26 - [c89a26cd-4e4d-4923-84d3-a681cb44168f] 💾 Saved file to temp path: C:\Users\hlibs\AppData\Local\Temp\tmphs_fx5yv.mp4
+2025-07-27 16:55:37.282 | INFO     | main:transcribe:28 - [c89a26cd-4e4d-4923-84d3-a681cb44168f] 🧠 Starting transcription
+2025-07-27 16:55:37.282 | INFO     | main:transcribe:34 - [c89a26cd-4e4d-4923-84d3-a681cb44168f] 🌐 Autodetect language
+2025-07-27 16:56:46.195 | DEBUG    | main:transcribe:39 - [c89a26cd-4e4d-4923-84d3-a681cb44168f] 🧹 Temp file deleted
+2025-07-27 16:56:46.195 | SUCCESS  | main:transcribe:45 - [c89a26cd-4e4d-4923-84d3-a681cb44168f] ✅ Transcription done. 683 characters
+2025-07-27 16:58:16.054 | INFO     | main:transcribe:19 - [e38609d5-ec2c-46f6-b724-ff3627910e76] 📥 Received file: tmpyooy_a9s.mp4 from 127.0.0.1
+2025-07-27 16:58:16.064 | DEBUG    | main:transcribe:26 - [e38609d5-ec2c-46f6-b724-ff3627910e76] 💾 Saved file to temp path: C:\Users\hlibs\AppData\Local\Temp\tmp03dkpcdb.mp4
+2025-07-27 16:58:16.065 | INFO     | main:transcribe:28 - [e38609d5-ec2c-46f6-b724-ff3627910e76] 🧠 Starting transcription
+2025-07-27 16:58:16.065 | INFO     | main:transcribe:34 - [e38609d5-ec2c-46f6-b724-ff3627910e76] 🌐 Autodetect language
+2025-07-27 16:59:23.065 | DEBUG    | main:transcribe:39 - [e38609d5-ec2c-46f6-b724-ff3627910e76] 🧹 Temp file deleted
+2025-07-27 16:59:23.065 | SUCCESS  | main:transcribe:45 - [e38609d5-ec2c-46f6-b724-ff3627910e76] ✅ Transcription done. 683 characters
+2025-07-27 17:17:22.311 | INFO     | main:transcribe:19 - [a67cbeac-5db6-4523-806c-6c9ab3ac465e] 📥 Received file: test60.mp4 from 127.0.0.1
+2025-07-27 17:17:22.322 | DEBUG    | main:transcribe:26 - [a67cbeac-5db6-4523-806c-6c9ab3ac465e] 💾 Saved file to temp path: C:\Users\hlibs\AppData\Local\Temp\tmp2oi1h3i1.mp4
+2025-07-27 17:17:22.322 | INFO     | main:transcribe:28 - [a67cbeac-5db6-4523-806c-6c9ab3ac465e] 🧠 Starting transcription
+2025-07-27 17:17:22.322 | INFO     | main:transcribe:34 - [a67cbeac-5db6-4523-806c-6c9ab3ac465e] 🌐 Autodetect language
+2025-07-27 17:18:34.965 | DEBUG    | main:transcribe:39 - [a67cbeac-5db6-4523-806c-6c9ab3ac465e] 🧹 Temp file deleted
+2025-07-27 17:18:34.966 | SUCCESS  | main:transcribe:45 - [a67cbeac-5db6-4523-806c-6c9ab3ac465e] ✅ Transcription done. 683 characters

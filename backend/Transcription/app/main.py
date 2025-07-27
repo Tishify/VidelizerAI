@@ -14,7 +14,7 @@ logger.add("logs/whisper.log", rotation="1 MB", level="DEBUG", backtrace=True, d
 logger.info("Whisper API initialized")
 
 @app.post("/transcribe")
-async def transcribe(file: UploadFile = File(...), request: Request = None, lang: str = "auto"):
+async def transcribe(file: UploadFile = File(...), request: Request = None, lang: str = "Ukrainian"):
     request_id = str(uuid.uuid4())
     logger.info(f"[{request_id}] 📥 Received file: {file.filename} from {request.client.host}")
 
