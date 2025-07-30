@@ -46,6 +46,7 @@ async def transcribe(file: UploadFile = File(...), request: Request = None, lang
             start_time = time.time()
             
             logger.info(f"[{request_id}] 🧠 Loading Whisper model and processing audio...")
+            logger.info(f"[{request_id}] ⏳ This may take several minutes for large files...")
             result = model.transcribe(tmp_path, **options)
             
             # Вычисляем время выполнения

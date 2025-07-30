@@ -2068,3 +2068,21 @@ Error opening input files: Invalid data found when processing input
 2025-07-30 15:55:38.930 | INFO     | main:transcribe:41 - [f1a96833-926a-4b7a-80e5-d81995a5aa89] 📁 File: video1606568134.mp4, Size: 70913734 bytes
 2025-07-30 15:55:38.930 | INFO     | main:transcribe:42 - [f1a96833-926a-4b7a-80e5-d81995a5aa89] 🔧 Options: {'fp16': False}
 2025-07-30 15:55:38.930 | INFO     | main:transcribe:48 - [f1a96833-926a-4b7a-80e5-d81995a5aa89] 🧠 Loading Whisper model and processing audio...
+2025-07-30 16:06:54.547 | INFO     | main:<module>:14 - Whisper API initialized
+2025-07-30 16:06:57.624 | INFO     | main:transcribe:19 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 🚀 ===== TRANSCRIPTION START =====
+2025-07-30 16:06:57.624 | INFO     | main:transcribe:20 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 📥 Received file: test1.mp4 from 127.0.0.1
+2025-07-30 16:06:57.624 | INFO     | main:transcribe:21 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 📊 File details: Size=5671284, Type=video/mp4
+2025-07-30 16:06:57.627 | DEBUG    | main:transcribe:28 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 💾 Saved file to temp path: /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpbmbbjfwc.mp4
+2025-07-30 16:06:57.628 | INFO     | main:transcribe:30 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 🧠 Starting transcription
+2025-07-30 16:06:57.628 | INFO     | main:transcribe:36 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 🌐 Autodetect language
+2025-07-30 16:06:57.628 | INFO     | main:transcribe:40 - [13bc8897-0356-407f-87e4-2fb4bb832c62] ⏳ Starting Whisper transcription...
+2025-07-30 16:06:57.628 | INFO     | main:transcribe:41 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 📁 File: test1.mp4, Size: 5671284 bytes
+2025-07-30 16:06:57.628 | INFO     | main:transcribe:42 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 🔧 Options: {'fp16': False}
+2025-07-30 16:06:57.628 | INFO     | main:transcribe:48 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 🧠 Loading Whisper model and processing audio...
+2025-07-30 16:06:57.628 | INFO     | main:transcribe:49 - [13bc8897-0356-407f-87e4-2fb4bb832c62] ⏳ This may take several minutes for large files...
+2025-07-30 16:10:00.075 | INFO     | main:transcribe:54 - [13bc8897-0356-407f-87e4-2fb4bb832c62] ⏱️ Transcription completed in 182.45 seconds
+2025-07-30 16:10:00.076 | INFO     | main:transcribe:57 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 📝 Raw transcript length: 2397 characters
+2025-07-30 16:10:00.076 | SUCCESS  | main:transcribe:65 - [13bc8897-0356-407f-87e4-2fb4bb832c62] ✅ Transcription done. Final length: 2397 characters
+2025-07-30 16:10:00.077 | DEBUG    | main:transcribe:75 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 🧹 Temp file deleted
+2025-07-30 16:10:00.077 | INFO     | main:transcribe:77 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 🎯 ===== TRANSCRIPTION COMPLETE =====
+2025-07-30 16:10:00.077 | INFO     | main:transcribe:78 - [13bc8897-0356-407f-87e4-2fb4bb832c62] 📤 Returning response with 2397 characters

@@ -90,7 +90,7 @@ def upload_video(video: UploadFile = File(...)):
         
         with open(temp_path, 'rb') as f:
             files = {'file': (video.filename, f, video.content_type)}
-            response = requests.post(f"{TRANSCRIPTION_SERVICE_URL}/transcribe", files=files, timeout=300)
+            response = requests.post(f"{TRANSCRIPTION_SERVICE_URL}/transcribe", files=files, timeout=6000)
         
         if response.status_code == 200:
             transcript_data = response.json()
