@@ -96,3 +96,4 @@
 2025-07-27 17:17:22.322 | INFO     | main:transcribe:34 - [a67cbeac-5db6-4523-806c-6c9ab3ac465e] 🌐 Autodetect language
 2025-07-27 17:18:34.965 | DEBUG    | main:transcribe:39 - [a67cbeac-5db6-4523-806c-6c9ab3ac465e] 🧹 Temp file deleted
 2025-07-27 17:18:34.966 | SUCCESS  | main:transcribe:45 - [a67cbeac-5db6-4523-806c-6c9ab3ac465e] ✅ Transcription done. 683 characters
+2025-07-30 14:41:50.170 | INFO     | main:<module>:14 - Whisper API initialized

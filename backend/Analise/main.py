@@ -10,6 +10,7 @@ from pydantic import BaseModel
 import tempfile
 import shutil
 import os
+import requests
 
 app = FastAPI()
 
@@ -31,6 +32,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 # DB init
 transcripts_db = TinyDB("db/transcripts.json")
 chats_db = TinyDB("db/chats.json")
+
+# Transcription service URL
+TRANSCRIPTION_SERVICE_URL = "http://localhost:8080"
 
 # Models
 class Transcript(BaseModel):
@@ -65,7 +69,7 @@ def root():
     logger.info("GET / → redirect to /static/index.html")
     return RedirectResponse(url="/static/index.html")
 
-# Upload video file - соответствует frontend API
+# Upload video file - отправляет в Транскрипт сервис
 @app.post("/api/videos/upload")
 def upload_video(video: UploadFile = File(...)):
     request_id = str(uuid4())
@@ -77,44 +81,65 @@ def upload_video(video: UploadFile = File(...)):
     logger.debug(f"[{request_id}] File saved to temp: {temp_path}")
 
     try:
-        logger.info(f"[{request_id}] ✈️ Sending file to Whisper: http://localhost:8000/transcribe?lang=auto")
-        # Заглушка відповіді Whisper
-        fake_text = "[FAKE TRANSCRIPT TEXT HERE FROM WHISPER]"
-        video_id = str(uuid4())
-        transcripts_db.insert({"id": video_id, "text": fake_text})
-        logger.success(f"[{request_id}] ✅ Received text ({len(fake_text)} chars)")
-        return {"success": True, "videoId": video_id}
+        # Отправляем файл в Транскрипт сервис
+        logger.info(f"[{request_id}] ✈️ Sending file to Transcription service: {TRANSCRIPTION_SERVICE_URL}/transcribe")
+        
+        with open(temp_path, 'rb') as f:
+            files = {'file': (video.filename, f, video.content_type)}
+            response = requests.post(f"{TRANSCRIPTION_SERVICE_URL}/transcribe", files=files)
+        
+        if response.status_code == 200:
+            transcript_data = response.json()
+            video_id = str(uuid4())
+            transcripts_db.insert({"id": video_id, "text": transcript_data.get("text", "")})
+            logger.success(f"[{request_id}] ✅ Received transcript from service")
+            return {"success": True, "videoId": video_id, "transcript": transcript_data}
+        else:
+            logger.error(f"[{request_id}] ❌ Transcription service error: {response.status_code}")
+            return {"success": False, "error": "Transcription service unavailable"}
+            
+    except Exception as e:
+        logger.error(f"[{request_id}] ❌ Error: {e}")
+        return {"success": False, "error": str(e)}
     finally:
         os.remove(temp_path)
         logger.debug(f"[{request_id}] 🪚 Temp file removed")
 
-# Start video analysis - соответствует frontend API
+# Start video analysis - использует данные из Транскрипт
 @app.post("/api/videos/analyze")
 def start_analysis(request: AnalysisRequest):
     analysis_id = str(uuid4())
     logger.info(f"Starting analysis for video {request.videoId}")
     
+    # Получаем транскрипт из БД
+    TranscriptQuery = Query()
+    transcript_record = transcripts_db.get(TranscriptQuery.id == request.videoId)
+    
+    if not transcript_record:
+        return {"error": "Transcript not found"}
+    
     # Создаем запись анализа
     analysis_result = {
         "id": analysis_id,
         "videoId": request.videoId,
-        "status": "processing",
-        "progress": 0,
+        "status": "completed",
+        "progress": 100,
         "result": {
-            "summary": "Video analysis in progress...",
+            "summary": f"Analysis of video {request.videoId}",
             "keyPoints": ["Point 1", "Point 2"],
             "sentiment": "neutral",
             "duration": 120,
-            "language": "en"
+            "language": "en",
+            "transcript": transcript_record.get("text", "")
         },
         "error": None,
         "createdAt": "2024-01-01T00:00:00Z",
-        "completedAt": None
+        "completedAt": "2024-01-01T00:05:00Z"
     }
     
     return analysis_result
 
-# Get analysis status - соответствует frontend API
+# Get analysis status
 @app.get("/api/analysis/{analysis_id}")
 def get_analysis_status(analysis_id: str):
     logger.info(f"Getting analysis status for {analysis_id}")
@@ -137,7 +162,7 @@ def get_analysis_status(analysis_id: str):
         "completedAt": "2024-01-01T00:05:00Z"
     }
 
-# Get analysis results - соответствует frontend API
+# Get analysis results
 @app.get("/api/videos/{video_id}/analysis")
 def get_analysis_results(video_id: str):
     logger.info(f"Getting analysis results for video {video_id}")
