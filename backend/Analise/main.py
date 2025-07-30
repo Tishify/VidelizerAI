@@ -17,7 +17,7 @@ app = FastAPI()
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:3001"],
+    allow_origins=["http://localhost:3000", "http://localhost:3001", "http://localhost:8001"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -27,7 +27,7 @@ app.add_middleware(
 Path("db").mkdir(parents=True, exist_ok=True)
 
 # Static files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="static", html=True), name="static")
 
 # DB init
 transcripts_db = TinyDB("db/transcripts.json")
@@ -67,7 +67,11 @@ class AnalysisResult(BaseModel):
 @app.get("/")
 def root():
     logger.info("GET / → redirect to /static/index.html")
-    return RedirectResponse(url="/static/index.html")
+    response = RedirectResponse(url="/static/index.html")
+    response.headers["Cache-Control"] = "no-cache, no-store, must-revalidate"
+    response.headers["Pragma"] = "no-cache"
+    response.headers["Expires"] = "0"
+    return response
 
 # Upload video file - отправляет в Транскрипт сервис
 @app.post("/api/videos/upload")
@@ -86,37 +90,24 @@ def upload_video(video: UploadFile = File(...)):
         
         with open(temp_path, 'rb') as f:
             files = {'file': (video.filename, f, video.content_type)}
-            response = requests.post(f"{TRANSCRIPTION_SERVICE_URL}/transcribe", files=files, timeout=30)
+            response = requests.post(f"{TRANSCRIPTION_SERVICE_URL}/transcribe", files=files, timeout=300)
         
         if response.status_code == 200:
             transcript_data = response.json()
             video_id = str(uuid4())
             transcripts_db.insert({"id": video_id, "text": transcript_data.get("text", "")})
-            logger.success(f"[{request_id}] ✅ Received transcript from service")
+            logger.success(f"[{request_id}] ✅ Received REAL transcript from service: {transcript_data.get('text', '')[:100]}...")
             return {"success": True, "videoId": video_id, "transcript": transcript_data}
         else:
-            logger.warning(f"[{request_id}] ⚠️ Transcription service error: {response.status_code}")
-            # Возвращаем фейковый ответ вместо ошибки
-            video_id = str(uuid4())
-            fake_transcript = {"text": f"[FAKE TRANSCRIPT for {video.filename}]"}
-            transcripts_db.insert({"id": video_id, "text": fake_transcript["text"]})
-            logger.info(f"[{request_id}] ✅ Using fake transcript")
-            return {"success": True, "videoId": video_id, "transcript": fake_transcript}
+            logger.error(f"[{request_id}] ❌ Transcription service error: {response.status_code} - {response.text}")
+            return {"success": False, "error": f"Transcription service error: {response.status_code}"}
             
     except requests.exceptions.ConnectionError:
-        logger.warning(f"[{request_id}] ⚠️ Transcription service unavailable, using fake transcript")
-        # Возвращаем фейковый ответ если Транскрипт недоступен
-        video_id = str(uuid4())
-        fake_transcript = {"text": f"[FAKE TRANSCRIPT for {video.filename}]"}
-        transcripts_db.insert({"id": video_id, "text": fake_transcript["text"]})
-        return {"success": True, "videoId": video_id, "transcript": fake_transcript}
+        logger.error(f"[{request_id}] ❌ Transcription service unavailable")
+        return {"success": False, "error": "Transcription service unavailable"}
     except Exception as e:
         logger.error(f"[{request_id}] ❌ Error: {e}")
-        # Возвращаем фейковый ответ вместо ошибки
-        video_id = str(uuid4())
-        fake_transcript = {"text": f"[FAKE TRANSCRIPT for {video.filename}]"}
-        transcripts_db.insert({"id": video_id, "text": fake_transcript["text"]})
-        return {"success": True, "videoId": video_id, "transcript": fake_transcript}
+        return {"success": False, "error": str(e)}
     finally:
         os.remove(temp_path)
         logger.debug(f"[{request_id}] 🪚 Temp file removed")

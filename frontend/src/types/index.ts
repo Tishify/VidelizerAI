@@ -5,6 +5,7 @@ export interface VideoFile {
   type: string;
   lastModified: number;
   preview?: string;
+  file: File;
 }
 
 export interface AnalysisResult {

@@ -85,6 +85,7 @@ export const createVideoFile = (file: File): VideoFile => {
     size: file.size,
     type: file.type,
     lastModified: file.lastModified,
+    file: file,
   };
 };
 

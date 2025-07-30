@@ -49,13 +49,8 @@ const UploadPage: React.FC = () => {
         });
       }, 200);
 
-      // In a real implementation, you would get the actual file from selectedVideo
-      // For now, we'll simulate the upload
-      const mockFile = new File(['mock video content'], selectedVideo.name, {
-        type: selectedVideo.type,
-      });
-
-      const response = await videoApi.uploadVideo(mockFile);
+      // Upload the actual video file
+      const response = await videoApi.uploadVideo(selectedVideo.file);
       
       clearInterval(progressInterval);
       setUploadProgress(100);
