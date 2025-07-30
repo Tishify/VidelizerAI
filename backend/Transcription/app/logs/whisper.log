@@ -97,3 +97,1263 @@
 2025-07-27 17:18:34.965 | DEBUG    | main:transcribe:39 - [a67cbeac-5db6-4523-806c-6c9ab3ac465e] 🧹 Temp file deleted
 2025-07-27 17:18:34.966 | SUCCESS  | main:transcribe:45 - [a67cbeac-5db6-4523-806c-6c9ab3ac465e] ✅ Transcription done. 683 characters
 2025-07-30 14:41:50.170 | INFO     | main:<module>:14 - Whisper API initialized
+2025-07-30 14:42:46.366 | INFO     | main:transcribe:19 - [f205d4c3-4cf7-44c3-8228-e69cb59a7f13] 📥 Received file: null from 127.0.0.1
+2025-07-30 14:42:46.369 | DEBUG    | main:transcribe:26 - [f205d4c3-4cf7-44c3-8228-e69cb59a7f13] 💾 Saved file to temp path: /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpockvlp0r.mp4
+2025-07-30 14:42:46.370 | INFO     | main:transcribe:28 - [f205d4c3-4cf7-44c3-8228-e69cb59a7f13] 🧠 Starting transcription
+2025-07-30 14:42:46.370 | INFO     | main:transcribe:32 - [f205d4c3-4cf7-44c3-8228-e69cb59a7f13] 🌍 Forced language: Ukrainian
+2025-07-30 14:42:48.889 | ERROR    | main:transcribe:49 - [f205d4c3-4cf7-44c3-8228-e69cb59a7f13] ❌ Transcription failed
+Traceback (most recent call last):
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 58, in load_audio
+    out = run(cmd, capture_output=True, check=True).stdout
+          │   └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpockvlp0r.mp4', '-f', 's16l...
+          └ <function run at 0x10110fa30>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+          │                  │        │       └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpockvlp0r.mp4', '-f', 's16l...
+          │                  │        └ <Popen: returncode: 183 args: ['ffmpeg', '-nostdin', '-threads', '0', '-i', ...>
+          │                  └ 183
+          └ <class 'subprocess.CalledProcessError'>
+
+subprocess.CalledProcessError: Command '['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpockvlp0r.mp4', '-f', 's16le', '-ac', '1', '-acodec', 'pcm_s16le', '-ar', '16000', '-']' returned non-zero exit status 183.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 4
+               │     └ 7
+               └ <function _main at 0x10156e320>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 4
+           │    └ <function BaseProcess._bootstrap at 0x101084940>
+           └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x10106ff40>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x10157a350>, 'target': <bound method Server.run of <uvicorn.server.Server object...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    └ <function subprocess_started at 0x1022f3370>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x10157a3b0>>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+           │       │   │    └ <function Server.serve at 0x1022f2680>
+           │       │   └ <uvicorn.server.Server object at 0x10157a3b0>
+           │       └ <function run at 0x1015752d0>
+           └ <module 'asyncio' from '/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asy...
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object Server.serve at 0x10240b6f0>
+           │    └ <cyfunction Loop.run_until_complete at 0x1024ec2b0>
+           └ <uvloop.Loop running=True closed=False debug=False>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604bb0>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604b...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x10284a680>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604bb0>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604b...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604bb0>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604b...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+          └ <fastapi.applications.FastAPI object at 0x10284a680>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x10e0a7b50>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604b...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x10e0a7b50>
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604b...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x10b968df0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10e0a7910>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604b...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10e0a7910>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604b...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x10b4fe200>>
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10e0a7910>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604b...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │     └ <function Route.handle at 0x1034a2f80>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10e0a7910>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604b...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <function request_response.<locals>.app at 0x10e0a7be0>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10e0a7910>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604b...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x10e0d7a90>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x10e0a7d00>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10e0a7d90>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d604b...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x10e0a7d00>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x10e0d7a90>
+                     └ <function get_request_handler.<locals>.app at 0x10e0a7c70>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x1034d4af0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'lang': 'Ukrainian', 'file': UploadFile(filename='null', size=0, headers=Headers({'content-disposition': 'form-data; name="f...
+                 │         └ <function transcribe at 0x10e0a77f0>
+                 └ <fastapi.dependencies.models.Dependant object at 0x10d6056c0>
+
+> File "/Users/mykytatishkin/Documents/GitHub/VidelizerAI/backend/Transcription/app/main.py", line 36, in transcribe
+    result = model.transcribe(tmp_path, **options)
+             │     │          │           └ {'fp16': False, 'language': 'Ukrainian'}
+             │     │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpockvlp0r.mp4'
+             │     └ <function transcribe at 0x10b4a6c20>
+             └ Whisper(
+                 (encoder): AudioEncoder(
+                   (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+                   (conv2): C...
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/transcribe.py", line 139, in transcribe
+    mel = log_mel_spectrogram(audio, model.dims.n_mels, padding=N_SAMPLES)
+          │                   │      │     │    │               └ 480000
+          │                   │      │     │    └ 80
+          │                   │      │     └ ModelDimensions(n_mels=80, n_audio_ctx=1500, n_audio_state=1024, n_audio_head=16, n_audio_layer=24, n_vocab=51865, n_text_ctx...
+          │                   │      └ Whisper(
+          │                   │          (encoder): AudioEncoder(
+          │                   │            (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+          │                   │            (conv2): C...
+          │                   └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpockvlp0r.mp4'
+          └ <function log_mel_spectrogram at 0x10b1bab90>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 140, in log_mel_spectrogram
+    audio = load_audio(audio)
+            │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpockvlp0r.mp4'
+            └ <function load_audio at 0x10b1b9c60>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 60, in load_audio
+    raise RuntimeError(f"Failed to load audio: {e.stderr.decode()}") from e
+
+RuntimeError: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x142e054f0] Format mov,mp4,m4a,3gp,3g2,mj2 detected only with low score of 1, misdetection possible!
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x142e054f0] moov atom not found
+[in#0 @ 0x142e05290] Error opening input: Invalid data found when processing input
+Error opening input file /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpockvlp0r.mp4.
+Error opening input files: Invalid data found when processing input
+
+2025-07-30 14:43:00.772 | INFO     | main:transcribe:19 - [73d3246f-958b-486d-b9c9-2423d03cdaa2] 📥 Received file: null from 127.0.0.1
+2025-07-30 14:43:00.773 | DEBUG    | main:transcribe:26 - [73d3246f-958b-486d-b9c9-2423d03cdaa2] 💾 Saved file to temp path: /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp75ruo_kj.mp4
+2025-07-30 14:43:00.773 | INFO     | main:transcribe:28 - [73d3246f-958b-486d-b9c9-2423d03cdaa2] 🧠 Starting transcription
+2025-07-30 14:43:00.773 | INFO     | main:transcribe:32 - [73d3246f-958b-486d-b9c9-2423d03cdaa2] 🌍 Forced language: Ukrainian
+2025-07-30 14:43:00.938 | ERROR    | main:transcribe:49 - [73d3246f-958b-486d-b9c9-2423d03cdaa2] ❌ Transcription failed
+Traceback (most recent call last):
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 58, in load_audio
+    out = run(cmd, capture_output=True, check=True).stdout
+          │   └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp75ruo_kj.mp4', '-f', 's16l...
+          └ <function run at 0x10110fa30>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+          │                  │        │       └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp75ruo_kj.mp4', '-f', 's16l...
+          │                  │        └ <Popen: returncode: 183 args: ['ffmpeg', '-nostdin', '-threads', '0', '-i', ...>
+          │                  └ 183
+          └ <class 'subprocess.CalledProcessError'>
+
+subprocess.CalledProcessError: Command '['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp75ruo_kj.mp4', '-f', 's16le', '-ac', '1', '-acodec', 'pcm_s16le', '-ar', '16000', '-']' returned non-zero exit status 183.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 4
+               │     └ 7
+               └ <function _main at 0x10156e320>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 4
+           │    └ <function BaseProcess._bootstrap at 0x101084940>
+           └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x10106ff40>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x10157a350>, 'target': <bound method Server.run of <uvicorn.server.Server object...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    └ <function subprocess_started at 0x1022f3370>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x10157a3b0>>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+           │       │   │    └ <function Server.serve at 0x1022f2680>
+           │       │   └ <uvicorn.server.Server object at 0x10157a3b0>
+           │       └ <function run at 0x1015752d0>
+           └ <module 'asyncio' from '/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asy...
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object Server.serve at 0x10240b6f0>
+           │    └ <cyfunction Loop.run_until_complete at 0x1024ec2b0>
+           └ <uvloop.Loop running=True closed=False debug=False>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d6050>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d60...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x10284a680>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d6050>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d60...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d6050>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d60...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+          └ <fastapi.applications.FastAPI object at 0x10284a680>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x10e0a7d90>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d60...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x10e0a7d90>
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d60...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x10e0d7970>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10e0a7e20>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d60...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10e0a7e20>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d60...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x10b4fe200>>
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10e0a7e20>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d60...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │     └ <function Route.handle at 0x1034a2f80>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10e0a7e20>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d60...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <function request_response.<locals>.app at 0x10e0a7be0>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10e0a7e20>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d60...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x10e0d6bc0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x10e0a7f40>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10ffd6290>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d60...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x10e0a7f40>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x10e0d6bc0>
+                     └ <function get_request_handler.<locals>.app at 0x10e0a7c70>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x1034d4af0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'lang': 'Ukrainian', 'file': UploadFile(filename='null', size=0, headers=Headers({'content-disposition': 'form-data; name="f...
+                 │         └ <function transcribe at 0x10e0a77f0>
+                 └ <fastapi.dependencies.models.Dependant object at 0x10d6056c0>
+
+> File "/Users/mykytatishkin/Documents/GitHub/VidelizerAI/backend/Transcription/app/main.py", line 36, in transcribe
+    result = model.transcribe(tmp_path, **options)
+             │     │          │           └ {'fp16': False, 'language': 'Ukrainian'}
+             │     │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp75ruo_kj.mp4'
+             │     └ <function transcribe at 0x10b4a6c20>
+             └ Whisper(
+                 (encoder): AudioEncoder(
+                   (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+                   (conv2): C...
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/transcribe.py", line 139, in transcribe
+    mel = log_mel_spectrogram(audio, model.dims.n_mels, padding=N_SAMPLES)
+          │                   │      │     │    │               └ 480000
+          │                   │      │     │    └ 80
+          │                   │      │     └ ModelDimensions(n_mels=80, n_audio_ctx=1500, n_audio_state=1024, n_audio_head=16, n_audio_layer=24, n_vocab=51865, n_text_ctx...
+          │                   │      └ Whisper(
+          │                   │          (encoder): AudioEncoder(
+          │                   │            (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+          │                   │            (conv2): C...
+          │                   └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp75ruo_kj.mp4'
+          └ <function log_mel_spectrogram at 0x10b1bab90>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 140, in log_mel_spectrogram
+    audio = load_audio(audio)
+            │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp75ruo_kj.mp4'
+            └ <function load_audio at 0x10b1b9c60>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 60, in load_audio
+    raise RuntimeError(f"Failed to load audio: {e.stderr.decode()}") from e
+
+RuntimeError: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x13ee158c0] Format mov,mp4,m4a,3gp,3g2,mj2 detected only with low score of 1, misdetection possible!
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x13ee158c0] moov atom not found
+[in#0 @ 0x13ee155d0] Error opening input: Invalid data found when processing input
+Error opening input file /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp75ruo_kj.mp4.
+Error opening input files: Invalid data found when processing input
+
+2025-07-30 14:43:05.941 | INFO     | main:transcribe:19 - [24c00618-95d2-4581-8e7e-28dbaa19bdd1] 📥 Received file: video1606568134.mp4 from 127.0.0.1
+2025-07-30 14:43:05.942 | DEBUG    | main:transcribe:26 - [24c00618-95d2-4581-8e7e-28dbaa19bdd1] 💾 Saved file to temp path: /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp5k2nyy0n.mp4
+2025-07-30 14:43:05.942 | INFO     | main:transcribe:28 - [24c00618-95d2-4581-8e7e-28dbaa19bdd1] 🧠 Starting transcription
+2025-07-30 14:43:05.942 | INFO     | main:transcribe:32 - [24c00618-95d2-4581-8e7e-28dbaa19bdd1] 🌍 Forced language: Ukrainian
+2025-07-30 14:43:06.020 | ERROR    | main:transcribe:49 - [24c00618-95d2-4581-8e7e-28dbaa19bdd1] ❌ Transcription failed
+Traceback (most recent call last):
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 58, in load_audio
+    out = run(cmd, capture_output=True, check=True).stdout
+          │   └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp5k2nyy0n.mp4', '-f', 's16l...
+          └ <function run at 0x10110fa30>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+          │                  │        │       └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp5k2nyy0n.mp4', '-f', 's16l...
+          │                  │        └ <Popen: returncode: 183 args: ['ffmpeg', '-nostdin', '-threads', '0', '-i', ...>
+          │                  └ 183
+          └ <class 'subprocess.CalledProcessError'>
+
+subprocess.CalledProcessError: Command '['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp5k2nyy0n.mp4', '-f', 's16le', '-ac', '1', '-acodec', 'pcm_s16le', '-ar', '16000', '-']' returned non-zero exit status 183.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 4
+               │     └ 7
+               └ <function _main at 0x10156e320>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 4
+           │    └ <function BaseProcess._bootstrap at 0x101084940>
+           └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x10106ff40>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x10157a350>, 'target': <bound method Server.run of <uvicorn.server.Server object...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    └ <function subprocess_started at 0x1022f3370>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x10157a3b0>>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+           │       │   │    └ <function Server.serve at 0x1022f2680>
+           │       │   └ <uvicorn.server.Server object at 0x10157a3b0>
+           │       └ <function run at 0x1015752d0>
+           └ <module 'asyncio' from '/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asy...
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object Server.serve at 0x10240b6f0>
+           │    └ <cyfunction Loop.run_until_complete at 0x1024ec2b0>
+           └ <uvloop.Loop running=True closed=False debug=False>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d6950>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d69...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x10284a680>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d6950>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d69...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d6950>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d69...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+          └ <fastapi.applications.FastAPI object at 0x10284a680>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x10ffd6290>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d69...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x10ffd6290>
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d69...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x10e0d74c0>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10ffd4040>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d69...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10ffd4040>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d69...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x10b4fe200>>
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10ffd4040>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d69...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │     └ <function Route.handle at 0x1034a2f80>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10ffd4040>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d69...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <function request_response.<locals>.app at 0x10e0a7be0>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x10ffd4040>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d69...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x10d754430>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x11b0dad40>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0db0a0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10e0d69...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x11b0dad40>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x10d754430>
+                     └ <function get_request_handler.<locals>.app at 0x10e0a7c70>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x1034d4af0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'lang': 'Ukrainian', 'file': UploadFile(filename='video1606568134.mp4', size=18, headers=Headers({'content-disposition': 'fo...
+                 │         └ <function transcribe at 0x10e0a77f0>
+                 └ <fastapi.dependencies.models.Dependant object at 0x10d6056c0>
+
+> File "/Users/mykytatishkin/Documents/GitHub/VidelizerAI/backend/Transcription/app/main.py", line 36, in transcribe
+    result = model.transcribe(tmp_path, **options)
+             │     │          │           └ {'fp16': False, 'language': 'Ukrainian'}
+             │     │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp5k2nyy0n.mp4'
+             │     └ <function transcribe at 0x10b4a6c20>
+             └ Whisper(
+                 (encoder): AudioEncoder(
+                   (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+                   (conv2): C...
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/transcribe.py", line 139, in transcribe
+    mel = log_mel_spectrogram(audio, model.dims.n_mels, padding=N_SAMPLES)
+          │                   │      │     │    │               └ 480000
+          │                   │      │     │    └ 80
+          │                   │      │     └ ModelDimensions(n_mels=80, n_audio_ctx=1500, n_audio_state=1024, n_audio_head=16, n_audio_layer=24, n_vocab=51865, n_text_ctx...
+          │                   │      └ Whisper(
+          │                   │          (encoder): AudioEncoder(
+          │                   │            (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+          │                   │            (conv2): C...
+          │                   └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp5k2nyy0n.mp4'
+          └ <function log_mel_spectrogram at 0x10b1bab90>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 140, in log_mel_spectrogram
+    audio = load_audio(audio)
+            │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp5k2nyy0n.mp4'
+            └ <function load_audio at 0x10b1b9c60>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 60, in load_audio
+    raise RuntimeError(f"Failed to load audio: {e.stderr.decode()}") from e
+
+RuntimeError: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x146f06aa0] Format mov,mp4,m4a,3gp,3g2,mj2 detected only with low score of 1, misdetection possible!
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x146f06aa0] moov atom not found
+[in#0 @ 0x146f06850] Error opening input: Invalid data found when processing input
+Error opening input file /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp5k2nyy0n.mp4.
+Error opening input files: Invalid data found when processing input
+
+2025-07-30 14:44:45.382 | INFO     | main:transcribe:19 - [b487c6d5-4870-41e0-9fd8-bf3ab7696bcf] 📥 Received file: null from 127.0.0.1
+2025-07-30 14:44:45.384 | DEBUG    | main:transcribe:26 - [b487c6d5-4870-41e0-9fd8-bf3ab7696bcf] 💾 Saved file to temp path: /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpg7chc0qx.mp4
+2025-07-30 14:44:45.384 | INFO     | main:transcribe:28 - [b487c6d5-4870-41e0-9fd8-bf3ab7696bcf] 🧠 Starting transcription
+2025-07-30 14:44:45.384 | INFO     | main:transcribe:32 - [b487c6d5-4870-41e0-9fd8-bf3ab7696bcf] 🌍 Forced language: Ukrainian
+2025-07-30 14:44:45.543 | ERROR    | main:transcribe:49 - [b487c6d5-4870-41e0-9fd8-bf3ab7696bcf] ❌ Transcription failed
+Traceback (most recent call last):
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 58, in load_audio
+    out = run(cmd, capture_output=True, check=True).stdout
+          │   └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpg7chc0qx.mp4', '-f', 's16l...
+          └ <function run at 0x10110fa30>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+          │                  │        │       └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpg7chc0qx.mp4', '-f', 's16l...
+          │                  │        └ <Popen: returncode: 183 args: ['ffmpeg', '-nostdin', '-threads', '0', '-i', ...>
+          │                  └ 183
+          └ <class 'subprocess.CalledProcessError'>
+
+subprocess.CalledProcessError: Command '['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpg7chc0qx.mp4', '-f', 's16le', '-ac', '1', '-acodec', 'pcm_s16le', '-ar', '16000', '-']' returned non-zero exit status 183.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 4
+               │     └ 7
+               └ <function _main at 0x10156e320>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 4
+           │    └ <function BaseProcess._bootstrap at 0x101084940>
+           └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x10106ff40>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x10157a350>, 'target': <bound method Server.run of <uvicorn.server.Server object...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    └ <function subprocess_started at 0x1022f3370>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x10157a3b0>>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+           │       │   │    └ <function Server.serve at 0x1022f2680>
+           │       │   └ <uvicorn.server.Server object at 0x10157a3b0>
+           │       └ <function run at 0x1015752d0>
+           └ <module 'asyncio' from '/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asy...
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object Server.serve at 0x10240b6f0>
+           │    └ <cyfunction Loop.run_until_complete at 0x1024ec2b0>
+           └ <uvloop.Loop running=True closed=False debug=False>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754fa0>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754f...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x10284a680>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754fa0>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754f...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754fa0>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754f...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+          └ <fastapi.applications.FastAPI object at 0x10284a680>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x11b0db0a0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754f...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x11b0db0a0>
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754f...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x10d755690>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0dae60>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754f...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0dae60>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754f...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x10b4fe200>>
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0dae60>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754f...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │     └ <function Route.handle at 0x1034a2f80>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0dae60>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754f...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <function request_response.<locals>.app at 0x10e0a7be0>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0dae60>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754f...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x10d262020>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x11b0daf80>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0db2e0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d754f...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x11b0daf80>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x10d262020>
+                     └ <function get_request_handler.<locals>.app at 0x10e0a7c70>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x1034d4af0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'lang': 'Ukrainian', 'file': UploadFile(filename='null', size=0, headers=Headers({'content-disposition': 'form-data; name="f...
+                 │         └ <function transcribe at 0x10e0a77f0>
+                 └ <fastapi.dependencies.models.Dependant object at 0x10d6056c0>
+
+> File "/Users/mykytatishkin/Documents/GitHub/VidelizerAI/backend/Transcription/app/main.py", line 36, in transcribe
+    result = model.transcribe(tmp_path, **options)
+             │     │          │           └ {'fp16': False, 'language': 'Ukrainian'}
+             │     │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpg7chc0qx.mp4'
+             │     └ <function transcribe at 0x10b4a6c20>
+             └ Whisper(
+                 (encoder): AudioEncoder(
+                   (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+                   (conv2): C...
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/transcribe.py", line 139, in transcribe
+    mel = log_mel_spectrogram(audio, model.dims.n_mels, padding=N_SAMPLES)
+          │                   │      │     │    │               └ 480000
+          │                   │      │     │    └ 80
+          │                   │      │     └ ModelDimensions(n_mels=80, n_audio_ctx=1500, n_audio_state=1024, n_audio_head=16, n_audio_layer=24, n_vocab=51865, n_text_ctx...
+          │                   │      └ Whisper(
+          │                   │          (encoder): AudioEncoder(
+          │                   │            (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+          │                   │            (conv2): C...
+          │                   └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpg7chc0qx.mp4'
+          └ <function log_mel_spectrogram at 0x10b1bab90>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 140, in log_mel_spectrogram
+    audio = load_audio(audio)
+            │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpg7chc0qx.mp4'
+            └ <function load_audio at 0x10b1b9c60>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 60, in load_audio
+    raise RuntimeError(f"Failed to load audio: {e.stderr.decode()}") from e
+
+RuntimeError: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x13a905c70] Format mov,mp4,m4a,3gp,3g2,mj2 detected only with low score of 1, misdetection possible!
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x13a905c70] moov atom not found
+[in#0 @ 0x139706690] Error opening input: Invalid data found when processing input
+Error opening input file /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpg7chc0qx.mp4.
+Error opening input files: Invalid data found when processing input
+
+2025-07-30 14:45:32.398 | INFO     | main:transcribe:19 - [11d1c41d-a588-471f-b942-c37e006ab893] 📥 Received file: null from 127.0.0.1
+2025-07-30 14:45:32.399 | DEBUG    | main:transcribe:26 - [11d1c41d-a588-471f-b942-c37e006ab893] 💾 Saved file to temp path: /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp_5yvp6y2.mp4
+2025-07-30 14:45:32.399 | INFO     | main:transcribe:28 - [11d1c41d-a588-471f-b942-c37e006ab893] 🧠 Starting transcription
+2025-07-30 14:45:32.399 | INFO     | main:transcribe:32 - [11d1c41d-a588-471f-b942-c37e006ab893] 🌍 Forced language: Ukrainian
+2025-07-30 14:45:32.549 | ERROR    | main:transcribe:49 - [11d1c41d-a588-471f-b942-c37e006ab893] ❌ Transcription failed
+Traceback (most recent call last):
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 58, in load_audio
+    out = run(cmd, capture_output=True, check=True).stdout
+          │   └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp_5yvp6y2.mp4', '-f', 's16l...
+          └ <function run at 0x10110fa30>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+          │                  │        │       └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp_5yvp6y2.mp4', '-f', 's16l...
+          │                  │        └ <Popen: returncode: 183 args: ['ffmpeg', '-nostdin', '-threads', '0', '-i', ...>
+          │                  └ 183
+          └ <class 'subprocess.CalledProcessError'>
+
+subprocess.CalledProcessError: Command '['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp_5yvp6y2.mp4', '-f', 's16le', '-ac', '1', '-acodec', 'pcm_s16le', '-ar', '16000', '-']' returned non-zero exit status 183.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 4
+               │     └ 7
+               └ <function _main at 0x10156e320>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 4
+           │    └ <function BaseProcess._bootstrap at 0x101084940>
+           └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x10106ff40>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x10157a350>, 'target': <bound method Server.run of <uvicorn.server.Server object...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    └ <function subprocess_started at 0x1022f3370>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x10157a3b0>>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+           │       │   │    └ <function Server.serve at 0x1022f2680>
+           │       │   └ <uvicorn.server.Server object at 0x10157a3b0>
+           │       └ <function run at 0x1015752d0>
+           └ <module 'asyncio' from '/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asy...
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object Server.serve at 0x10240b6f0>
+           │    └ <cyfunction Loop.run_until_complete at 0x1024ec2b0>
+           └ <uvloop.Loop running=True closed=False debug=False>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d00>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x10284a680>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d00>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d00>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+          └ <fastapi.applications.FastAPI object at 0x10284a680>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x11b0db2e0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x11b0db2e0>
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x10d263e80>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0daef0>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0daef0>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x10b4fe200>>
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0daef0>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │     └ <function Route.handle at 0x1034a2f80>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0daef0>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <function request_response.<locals>.app at 0x10e0a7be0>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0daef0>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x10d262170>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x11b0db1c0>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0db520>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10d263d...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x11b0db1c0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x10d262170>
+                     └ <function get_request_handler.<locals>.app at 0x10e0a7c70>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x1034d4af0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'lang': 'Ukrainian', 'file': UploadFile(filename='null', size=0, headers=Headers({'content-disposition': 'form-data; name="f...
+                 │         └ <function transcribe at 0x10e0a77f0>
+                 └ <fastapi.dependencies.models.Dependant object at 0x10d6056c0>
+
+> File "/Users/mykytatishkin/Documents/GitHub/VidelizerAI/backend/Transcription/app/main.py", line 36, in transcribe
+    result = model.transcribe(tmp_path, **options)
+             │     │          │           └ {'fp16': False, 'language': 'Ukrainian'}
+             │     │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp_5yvp6y2.mp4'
+             │     └ <function transcribe at 0x10b4a6c20>
+             └ Whisper(
+                 (encoder): AudioEncoder(
+                   (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+                   (conv2): C...
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/transcribe.py", line 139, in transcribe
+    mel = log_mel_spectrogram(audio, model.dims.n_mels, padding=N_SAMPLES)
+          │                   │      │     │    │               └ 480000
+          │                   │      │     │    └ 80
+          │                   │      │     └ ModelDimensions(n_mels=80, n_audio_ctx=1500, n_audio_state=1024, n_audio_head=16, n_audio_layer=24, n_vocab=51865, n_text_ctx...
+          │                   │      └ Whisper(
+          │                   │          (encoder): AudioEncoder(
+          │                   │            (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+          │                   │            (conv2): C...
+          │                   └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp_5yvp6y2.mp4'
+          └ <function log_mel_spectrogram at 0x10b1bab90>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 140, in log_mel_spectrogram
+    audio = load_audio(audio)
+            │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp_5yvp6y2.mp4'
+            └ <function load_audio at 0x10b1b9c60>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 60, in load_audio
+    raise RuntimeError(f"Failed to load audio: {e.stderr.decode()}") from e
+
+RuntimeError: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x12fe30310] Format mov,mp4,m4a,3gp,3g2,mj2 detected only with low score of 1, misdetection possible!
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x12fe30310] moov atom not found
+[in#0 @ 0x12fe300c0] Error opening input: Invalid data found when processing input
+Error opening input file /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmp_5yvp6y2.mp4.
+Error opening input files: Invalid data found when processing input
+
+2025-07-30 14:45:57.811 | INFO     | main:transcribe:19 - [a04f8775-0492-40a0-9805-08ffd74b68ca] 📥 Received file: video1606568134.mp4 from 127.0.0.1
+2025-07-30 14:45:57.812 | DEBUG    | main:transcribe:26 - [a04f8775-0492-40a0-9805-08ffd74b68ca] 💾 Saved file to temp path: /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpqp596l5z.mp4
+2025-07-30 14:45:57.813 | INFO     | main:transcribe:28 - [a04f8775-0492-40a0-9805-08ffd74b68ca] 🧠 Starting transcription
+2025-07-30 14:45:57.813 | INFO     | main:transcribe:32 - [a04f8775-0492-40a0-9805-08ffd74b68ca] 🌍 Forced language: Ukrainian
+2025-07-30 14:45:57.953 | ERROR    | main:transcribe:49 - [a04f8775-0492-40a0-9805-08ffd74b68ca] ❌ Transcription failed
+Traceback (most recent call last):
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 58, in load_audio
+    out = run(cmd, capture_output=True, check=True).stdout
+          │   └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpqp596l5z.mp4', '-f', 's16l...
+          └ <function run at 0x10110fa30>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/subprocess.py", line 526, in run
+    raise CalledProcessError(retcode, process.args,
+          │                  │        │       └ ['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpqp596l5z.mp4', '-f', 's16l...
+          │                  │        └ <Popen: returncode: 183 args: ['ffmpeg', '-nostdin', '-threads', '0', '-i', ...>
+          │                  └ 183
+          └ <class 'subprocess.CalledProcessError'>
+
+subprocess.CalledProcessError: Command '['ffmpeg', '-nostdin', '-threads', '0', '-i', '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpqp596l5z.mp4', '-f', 's16le', '-ac', '1', '-acodec', 'pcm_s16le', '-ar', '16000', '-']' returned non-zero exit status 183.
+
+
+The above exception was the direct cause of the following exception:
+
+
+Traceback (most recent call last):
+
+  File "<string>", line 1, in <module>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 116, in spawn_main
+    exitcode = _main(fd, parent_sentinel)
+               │     │   └ 4
+               │     └ 7
+               └ <function _main at 0x10156e320>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/spawn.py", line 129, in _main
+    return self._bootstrap(parent_sentinel)
+           │    │          └ 4
+           │    └ <function BaseProcess._bootstrap at 0x101084940>
+           └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 314, in _bootstrap
+    self.run()
+    │    └ <function BaseProcess.run at 0x10106ff40>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/multiprocessing/process.py", line 108, in run
+    self._target(*self._args, **self._kwargs)
+    │    │        │    │        │    └ {'config': <uvicorn.config.Config object at 0x10157a350>, 'target': <bound method Server.run of <uvicorn.server.Server object...
+    │    │        │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    │        │    └ ()
+    │    │        └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+    │    └ <function subprocess_started at 0x1022f3370>
+    └ <SpawnProcess name='SpawnProcess-1' parent=26876 started>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/_subprocess.py", line 80, in subprocess_started
+    target(sockets=sockets)
+    │              └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+    └ <bound method Server.run of <uvicorn.server.Server object at 0x10157a3b0>>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/server.py", line 65, in run
+    return asyncio.run(self.serve(sockets=sockets))
+           │       │   │    │             └ [<socket.socket fd=3, family=AddressFamily.AF_INET, type=SocketKind.SOCK_STREAM, proto=0, laddr=('0.0.0.0', 8080)>]
+           │       │   │    └ <function Server.serve at 0x1022f2680>
+           │       │   └ <uvicorn.server.Server object at 0x10157a3b0>
+           │       └ <function run at 0x1015752d0>
+           └ <module 'asyncio' from '/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asy...
+
+  File "/opt/homebrew/Cellar/python@3.10/3.10.18/Frameworks/Python.framework/Versions/3.10/lib/python3.10/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+           │    │                  └ <coroutine object Server.serve at 0x10240b6f0>
+           │    └ <cyfunction Loop.run_until_complete at 0x1024ec2b0>
+           └ <uvloop.Loop running=True closed=False debug=False>
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/protocols/http/httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+                   └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+                 │    │   │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d10>>
+                 │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d...
+                 │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+                 │    └ <fastapi.applications.FastAPI object at 0x10284a680>
+                 └ <uvicorn.middleware.proxy_headers.ProxyHeadersMiddleware object at 0x102705fc0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+                           │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d10>>
+                           │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d...
+                           └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/applications.py", line 123, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <bound method RequestResponseCycle.send of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d10>>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+          └ <fastapi.applications.FastAPI object at 0x10284a680>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+    await self.app(scope, receive, _send)
+          │    │   │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x11b0db520>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <starlette.middleware.errors.ServerErrorMiddleware object at 0x10d605ea0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 65, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+          │                            │    │    │     │      │        └ <function ServerErrorMiddleware.__call__.<locals>._send at 0x11b0db520>
+          │                            │    │    │     │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d...
+          │                            │    │    │     └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    │    └ <starlette.requests.Request object at 0x10b553940>
+          │                            │    └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+          │                            └ <starlette.middleware.exceptions.ExceptionMiddleware object at 0x10d6069b0>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0db130>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 756, in __call__
+    await self.middleware_stack(scope, receive, send)
+          │    │                │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0db130>
+          │    │                │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d...
+          │    │                └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <bound method Router.app of <fastapi.routing.APIRouter object at 0x10b4fe200>>
+          └ <fastapi.routing.APIRouter object at 0x10b4fe200>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 776, in app
+    await route.handle(scope, receive, send)
+          │     │      │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0db130>
+          │     │      │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d...
+          │     │      └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │     └ <function Route.handle at 0x1034a2f80>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 297, in handle
+    await self.app(scope, receive, send)
+          │    │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0db130>
+          │    │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d...
+          │    │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │    └ <function request_response.<locals>.app at 0x10e0a7be0>
+          └ APIRoute(path='/transcribe', name='transcribe', methods=['POST'])
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 77, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+          │                            │    │        │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0db130>
+          │                            │    │        │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d...
+          │                            │    │        └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          │                            │    └ <starlette.requests.Request object at 0x10b5516c0>
+          │                            └ <function request_response.<locals>.app.<locals>.app at 0x11b0db400>
+          └ <function wrap_app_handling_exceptions at 0x1034a1bd0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+    await app(scope, receive, sender)
+          │   │      │        └ <function wrap_app_handling_exceptions.<locals>.wrapped_app.<locals>.sender at 0x11b0db760>
+          │   │      └ <bound method RequestResponseCycle.receive of <uvicorn.protocols.http.httptools_impl.RequestResponseCycle object at 0x10b552d...
+          │   └ {'type': 'http', 'asgi': {'version': '3.0', 'spec_version': '2.4'}, 'http_version': '1.1', 'server': ('127.0.0.1', 8080), 'cl...
+          └ <function request_response.<locals>.app.<locals>.app at 0x11b0db400>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/starlette/routing.py", line 72, in app
+    response = await func(request)
+                     │    └ <starlette.requests.Request object at 0x10b5516c0>
+                     └ <function get_request_handler.<locals>.app at 0x10e0a7c70>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 278, in app
+    raw_response = await run_endpoint_function(
+                         └ <function run_endpoint_function at 0x1034d4af0>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/fastapi/routing.py", line 191, in run_endpoint_function
+    return await dependant.call(**values)
+                 │         │      └ {'lang': 'Ukrainian', 'file': UploadFile(filename='video1606568134.mp4', size=18, headers=Headers({'content-disposition': 'fo...
+                 │         └ <function transcribe at 0x10e0a77f0>
+                 └ <fastapi.dependencies.models.Dependant object at 0x10d6056c0>
+
+> File "/Users/mykytatishkin/Documents/GitHub/VidelizerAI/backend/Transcription/app/main.py", line 36, in transcribe
+    result = model.transcribe(tmp_path, **options)
+             │     │          │           └ {'fp16': False, 'language': 'Ukrainian'}
+             │     │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpqp596l5z.mp4'
+             │     └ <function transcribe at 0x10b4a6c20>
+             └ Whisper(
+                 (encoder): AudioEncoder(
+                   (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+                   (conv2): C...
+
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/transcribe.py", line 139, in transcribe
+    mel = log_mel_spectrogram(audio, model.dims.n_mels, padding=N_SAMPLES)
+          │                   │      │     │    │               └ 480000
+          │                   │      │     │    └ 80
+          │                   │      │     └ ModelDimensions(n_mels=80, n_audio_ctx=1500, n_audio_state=1024, n_audio_head=16, n_audio_layer=24, n_vocab=51865, n_text_ctx...
+          │                   │      └ Whisper(
+          │                   │          (encoder): AudioEncoder(
+          │                   │            (conv1): Conv1d(80, 1024, kernel_size=(3,), stride=(1,), padding=(1,))
+          │                   │            (conv2): C...
+          │                   └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpqp596l5z.mp4'
+          └ <function log_mel_spectrogram at 0x10b1bab90>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 140, in log_mel_spectrogram
+    audio = load_audio(audio)
+            │          └ '/var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpqp596l5z.mp4'
+            └ <function load_audio at 0x10b1b9c60>
+  File "/Users/mykytatishkin/Library/Caches/pypoetry/virtualenvs/videlizerai-transcription-BEehPKBW-py3.10/lib/python3.10/site-packages/whisper/audio.py", line 60, in load_audio
+    raise RuntimeError(f"Failed to load audio: {e.stderr.decode()}") from e
+
+RuntimeError: Failed to load audio: ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers
+  built with Apple clang version 17.0.0 (clang-1700.0.13.3)
+  configuration: --prefix=/opt/homebrew/Cellar/ffmpeg/7.1.1_3 --enable-shared --enable-pthreads --enable-version3 --cc=clang --host-cflags= --host-ldflags='-Wl,-ld_classic' --enable-ffplay --enable-gnutls --enable-gpl --enable-libaom --enable-libaribb24 --enable-libbluray --enable-libdav1d --enable-libharfbuzz --enable-libjxl --enable-libmp3lame --enable-libopus --enable-librav1e --enable-librist --enable-librubberband --enable-libsnappy --enable-libsrt --enable-libssh --enable-libsvtav1 --enable-libtesseract --enable-libtheora --enable-libvidstab --enable-libvmaf --enable-libvorbis --enable-libvpx --enable-libwebp --enable-libx264 --enable-libx265 --enable-libxml2 --enable-libxvid --enable-lzma --enable-libfontconfig --enable-libfreetype --enable-frei0r --enable-libass --enable-libopencore-amrnb --enable-libopencore-amrwb --enable-libopenjpeg --enable-libspeex --enable-libsoxr --enable-libzmq --enable-libzimg --disable-libjack --disable-indev=jack --enable-videotoolbox --enable-audiotoolbox --enable-neon
+  libavutil      59. 39.100 / 59. 39.100
+  libavcodec     61. 19.101 / 61. 19.101
+  libavformat    61.  7.100 / 61.  7.100
+  libavdevice    61.  3.100 / 61.  3.100
+  libavfilter    10.  4.100 / 10.  4.100
+  libswscale      8.  3.100 /  8.  3.100
+  libswresample   5.  3.100 /  5.  3.100
+  libpostproc    58.  3.100 / 58.  3.100
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x147004790] Format mov,mp4,m4a,3gp,3g2,mj2 detected only with low score of 1, misdetection possible!
+[mov,mp4,m4a,3gp,3g2,mj2 @ 0x147004790] moov atom not found
+[in#0 @ 0x147004530] Error opening input: Invalid data found when processing input
+Error opening input file /var/folders/r9/t_ymwqq10jbc39r9dv1qt_900000gn/T/tmpqp596l5z.mp4.
+Error opening input files: Invalid data found when processing input
+
