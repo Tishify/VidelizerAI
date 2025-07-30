@@ -1,116 +1,87 @@
 # VidelizerAI
 
-An AI-powered video analysis platform that provides transcription, sentiment analysis, and key insights from uploaded videos.
+Проект для анализа видео с использованием AI.
 
-## Features
+## Структура проекта
 
-- **Video Upload**: Drag and drop video files for analysis
-- **AI Analysis**: Get comprehensive insights including:
-  - Video transcription
-  - Sentiment analysis
-  - Key points extraction
-  - Duration and language detection
-- **Results Dashboard**: View and filter analysis results
-- **Real-time Progress**: Track analysis status and progress
+- `backend/Analise/` - FastAPI backend для обработки видео
+- `frontend/` - React frontend приложение
+- `backend/Transcription/` - Сервис транскрипции (не используется в текущей версии)
 
-## Tech Stack
+## Быстрый запуск
 
-- **Frontend**: React 19, TypeScript, Tailwind CSS
-- **Backend**: Node.js, Express (planned)
-- **AI Services**: OpenAI Whisper, GPT-4 (planned)
-
-## Live Demo
-
-Visit the live application: [VidelizerAI on GitHub Pages](https://tishify.github.io/VidelizerAI)
-
-## Local Development
-
-### Prerequisites
-
-- Node.js 18 or higher
-- npm or yarn
-
-### Setup
-
-1. Clone the repository:
+### Вариант 1: Автоматический запуск
 ```bash
-git clone https://github.com/Tishify/VidelizerAI.git
-cd VidelizerAI
+./start.sh
 ```
 
-2. Install dependencies:
+### Вариант 2: Ручной запуск
+
+#### 1. Запуск Backend
+```bash
+cd backend/Analise
+poetry install --no-root
+poetry run uvicorn main:app --host 0.0.0.0 --port 8080 --reload
+```
+
+#### 2. Запуск Frontend (в новом терминале)
 ```bash
 cd frontend
 npm install
-```
-
-3. Start the development server:
-```bash
 npm start
 ```
 
-The application will be available at `http://localhost:3000`
+## Доступные URL
 
-### Build for Production
+- **Frontend**: http://localhost:3000
+- **Backend API**: http://localhost:8080
+- **Backend Docs**: http://localhost:8080/docs
 
+## API Endpoints
+
+### Backend (FastAPI)
+- `POST /api/videos/upload` - Загрузка видео
+- `POST /api/videos/analyze` - Начало анализа
+- `GET /api/analysis/{id}` - Статус анализа
+- `GET /api/videos/{id}/analysis` - Результаты анализа
+
+### Legacy endpoints
+- `POST /upload` - Старый endpoint для загрузки
+- `GET /transcript/{id}` - Получение транскрипта
+- `POST /chat/{id}` - Чат с AI
+
+## Технологии
+
+### Backend
+- FastAPI
+- Poetry (управление зависимостями)
+- TinyDB (простая БД)
+- Loguru (логирование)
+
+### Frontend
+- React 19
+- TypeScript
+- Tailwind CSS
+- Axios (HTTP клиент)
+
+## Разработка
+
+### Backend разработка
 ```bash
-npm run build
+cd backend/Analise
+poetry shell
+# Теперь можно запускать Python скрипты
 ```
 
-## Deployment
-
-### GitHub Pages (Automatic)
-
-The application is automatically deployed to GitHub Pages when changes are pushed to the main branch. The deployment is handled by GitHub Actions.
-
-### Manual Deployment
-
-To manually deploy to GitHub Pages:
-
+### Frontend разработка
 ```bash
 cd frontend
-npm run deploy
+npm run build  # сборка для продакшена
+npm test       # запуск тестов
 ```
 
-This will:
-1. Build the production version
-2. Deploy to the `gh-pages` branch
-3. Make the app available at `https://tishify.github.io/VidelizerAI`
+## Примечания
 
-## Project Structure
-
-```
-VidelizerAI/
-├── frontend/                 # React application
-│   ├── src/
-│   │   ├── components/      # Reusable UI components
-│   │   ├── pages/          # Page components
-│   │   ├── services/       # API services
-│   │   └── types/          # TypeScript type definitions
-│   ├── public/             # Static assets
-│   └── package.json        # Dependencies and scripts
-├── backend/                # Backend API (planned)
-├── documentation/          # Project documentation
-└── .github/workflows/     # GitHub Actions workflows
-```
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Roadmap
-
-- [ ] Backend API implementation
-- [ ] Real video processing and analysis
-- [ ] User authentication
-- [ ] Video storage and management
-- [ ] Advanced analytics dashboard
-- [ ] Mobile responsive design improvements 
+- Backend использует фейковые данные для демонстрации
+- CORS настроен для localhost:3000 и localhost:3001
+- Все API endpoints возвращают корректные JSON ответы 
