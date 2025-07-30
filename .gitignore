@@ -1,15 +1,118 @@
-Transcription/app/logs/whisper.log
-Transcription/app/__pycache__/*
-Transcription/app/logs/whisper.log
-backend/Transcription/app/__pycache__/main.cpython-310.pyc
-backend/Transcription/app/logs/whisper.log
-backend/Anal/logs/backend.log
-backend/Anal/__pycache__/main.cpython-310.pyc
-backend/Anal/__pycache__/gpt_structurer.cpython-310.pyc
-backend/Anal/poetry.lock
-backend/Anal/__pycache__/main.cpython-310.pyc
-backend/Anal/.env
-backend/Anal/__pycache__/*
-backend/Transcription/app/logs/whisper.log
-backend/Anal/.env
-backend/Anal/.env
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Dependency directories
+jspm_packages/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# dotenv environment variables file
+.env.test
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Temporary folders
+tmp/
+temp/
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Build outputs
+build/
+dist/
+*.egg-info/
+
+# Poetry
+poetry.lock
